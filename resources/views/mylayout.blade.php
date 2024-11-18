@@ -87,25 +87,42 @@
                 <nav class="w-full bg-transparent md:bg-transparent rounded shadow-lg px-6 py-4 mt-4 text-center md:p-0 md:mt-0 md:shadow-none">
                     <ul class="md:flex items-center">
                         <li>
-                            <a class="py-2 inline-block md:text-white md:hidden lg:block font-semibold" href="{{ route('dashboard') }}">
+                            <a class="py-2 inline-block md:text-white md:hidden lg:block font-semibold text-white" href="{{ route('dashboard') }}">
                                 Beranda</a>
                         </li>
                         <li class="md:ml-4">
-                            <a class="py-2 inline-block md:text-white font-semibold" href="#Tentang-Kami">
+                            <a class="py-2 inline-block md:text-white font-semibold text-white" href="#Tentang-Kami">
                                 Tentang Kami</a>
                         </li>
                         <li class="md:ml-4">
-                            <a class="py-2 inline-block md:text-white md:px-2 font-semibold" href="#Layanan">
+                            <a class="py-2 inline-block md:text-white md:px-2 font-semibold text-white" href="#Layanan">
                                 Layanan</a>
                         </li>
                         <li class="md:ml-4">
-                            <a class="py-2 inline-block md:text-white md:px-2 font-semibold" href="#" onclick="openModal()">
+                            <a class="py-2 inline-block md:text-white md:px-2 font-semibold text-white" href="#" onclick="openModal()">
                                 Jadwal</a>
                         </li>
                         <li class="md:ml-4">
                         <a
-                            class="py-2 inline-block md:text-white md:px-2 font-semibold" href="#Pengumuman">
+                            class="py-2 inline-block md:text-white md:px-2 font-semibold text-white" href="#Pengumuman">
                                 Pengumuman</a>
+                        </li>
+                        <!-- Tambahkan tombol tambahan -->
+                        <li class="mt-4 md:hidden">
+                            <a class="block font-semibold px-4 py-2 text-white bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full" href="\pasien\create">
+                                Daftar Konsultasi</a>
+                        </li>
+                        <li class="mt-4 md:hidden">
+                            <a class="block font-semibold px-4 py-2 text-white bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full" href="{{ route('booking') }}">
+                                Detail Booking</a>
+                        </li>
+                        <li class="mt-4 md:hidden flex justify-center">
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="inline">
+                                @csrf
+                                <button class="block font-semibold px-4 py-2 text-white bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full" type="submit">
+                                    Keluar
+                                </button>
+                            </form>
                         </li>
                     </ul>
                 </nav>
@@ -318,14 +335,13 @@
 
                 if (this.checked) {
                     menu.classList.remove("hidden");
-                    menu.classList.add("bg-blue-600"); // Tambahkan background biru saat toggle aktif
-                    navbar.classList.add("bg-blue-600"); // Pastikan navbar juga berubah menjadi biru
+                    menu.classList.add("bg-transparent"); // Tambahkan background biru saat toggle aktif
+                    navbar.classList.add("bg-transparent"); // Pastikan navbar juga berubah menjadi biru
                 } else {
                     menu.classList.add("hidden");
-                    navbar.classList.remove("bg-blue-600"); // Kembali transparan saat toggle dinonaktifkan dan di-scroll
+                    navbar.classList.remove("bg-transparent"); // Kembali transparan saat toggle dinonaktifkan dan di-scroll
                 }
             });
     </script>
 </body>
-
 </html>

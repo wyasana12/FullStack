@@ -27,7 +27,7 @@
                             </h3>
                         </div>
                         <div class="flex justify-end">
-                            <img src="{{ url('assets/img/bidan.png') }}" alt="Health illustration" class="mx-auto" />
+                            <img src="{{ url('assets/img/bidan.png') }}" alt="Health illustration" class="mx-auto`" />
                         </div>
                     </div>
                 </div>
