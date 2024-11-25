@@ -84,7 +84,7 @@
             </label>
 
             <div id="menu" class="hidden md:block w-full md:w-auto">
-                <nav class="w-full bg-transparent md:bg-transparent rounded shadow-lg px-6 py-4 mt-4 text-center md:p-0 md:mt-0 md:shadow-none">
+                <nav class="w-full bg-transparent md:bg-transparent rounded px-6 py-4 mt-4 text-center md:p-0 md:mt-0 md:shadow-none">
                     <ul class="md:flex items-center">
                         <li>
                             <a class="py-2 inline-block md:text-white md:hidden lg:block font-semibold text-white" href="{{ route('dashboard') }}">
@@ -335,13 +335,15 @@
 
                 if (this.checked) {
                     menu.classList.remove("hidden");
-                    menu.classList.add("bg-transparent"); // Tambahkan background biru saat toggle aktif
-                    navbar.classList.add("bg-transparent"); // Pastikan navbar juga berubah menjadi biru
+                    menu.classList.add("backdrop-blur-sm"); // Tambahkan background blur saat toggle aktif
+                    navbar.classList.add("bg-transparent"); // Pastikan navbar juga berubah menjadi transparan
                 } else {
                     menu.classList.add("hidden");
-                    navbar.classList.remove("bg-transparent"); // Kembali transparan saat toggle dinonaktifkan dan di-scroll
+                    menu.classList.remove("backdrop-blur-sm"); // Hapus efek blur saat toggle dinonaktifkan
+                    navbar.classList.remove("bg-transparent"); // Kembali transparan saat toggle dinonaktifkan
                 }
             });
     </script>
+
 </body>
 </html>

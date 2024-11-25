@@ -80,7 +80,7 @@
             </label>
 
             <div id="menu" class="hidden md:block w-full md:w-auto">
-                <nav class="w-full bg-transparent md:bg-transparent rounded shadow-lg px-6 py-4 mt-4 text-center md:p-0 md:mt-0 md:shadow-none">
+                <nav class="w-full bg-transparent md:bg-transparent rounded px-6 py-4 mt-4 text-center md:p-0 md:mt-0 md:shadow-none">
                     <ul class="md:flex items-center">
                         @if (Route::has('login'))
                             @auth
@@ -327,12 +327,16 @@
 
                 if (this.checked) {
                     menu.classList.remove("hidden");
-                    menu.classList.add("bg-blue-600"); // Tambahkan background biru saat toggle aktif
-                    navbar.classList.add("bg-blue-600"); // Pastikan navbar juga berubah menjadi biru
+                    menu.classList.add("backdrop-blur-sm"); // Tambahkan efek blur pada menu
+                    navbar.classList.add("backdrop-blur-sm"); // Tambahkan efek blur pada navbar
+                    navbar.classList.add("bg-transparent"); // Ubah navbar menjadi transparan
                 } else {
                     menu.classList.add("hidden");
-                    navbar.classList.remove("bg-blue-600"); // Kembali transparan saat toggle dinonaktifkan dan di-scroll
+                    menu.classList.remove("backdrop-blur-sm"); // Hapus efek blur pada menu
+                    navbar.classList.remove("backdrop-blur-sm"); // Hapus efek blur pada navbar
+                    navbar.classList.remove("bg-transparent"); // Kembalikan navbar ke keadaan awal
                 }
             });
     </script>
+    
 </body>

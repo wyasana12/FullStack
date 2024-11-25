@@ -1,7 +1,7 @@
 @extends('mylayout')
 @section('title', 'Edit Konsultasi | PMB Dyah Sumarmo')
 @section('content')
-    <section class="min-h-screen bg-gradient-to-br from-cyan-500 to-blue-600 py-12 px-4 sm:px-6 lg:px-8">
+    <section class="min-h-screen bg-gradient-to-br from-cyan-500 to-blue-600 py-12 px-4 sm:px-6 lg:px-8 pt-52">
         <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-start">
             <!-- Image Container - Hidden on mobile, shown on md screens and up -->
             <div class="hidden md:block">
@@ -17,6 +17,7 @@
 
             <!-- Form Container -->
             <div class="bg-white rounded-xl shadow-2xl p-8">
+                <!-- Judul Form -->
                 <div class="text-center mb-8">
                     <h2 class="text-3xl font-bold text-gray-800">Form Pembaruan Pendaftaran</h2>
                     <p class="text-gray-600 mt-2">Silakan perbarui data yang diperlukan</p>
